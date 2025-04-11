@@ -92,3 +92,18 @@ createBoard(@Body() createBoardDto: CreateBoardDto) {
     
 }
 ```
+
+param 가져오기
+
+```ts
+@Get("/:id")
+getboardById(@Param('id') id: string): Board {
+
+}
+
+@Get("/")
+getboardById(@Param() params: string[]): Board {
+
+}
+```
+
