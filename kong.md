@@ -26,3 +26,33 @@ nest g controller boards --no-spect
 ```
 테스트 코드는 일단 스킵
 
+
+servcie 생성
+
+```
+nest g service boards --no-spec
+```
+
+service를 사용ㅎ기 위해서는 @Injectable 데코를 붙여주고 module의 provider로 등록해주어야 한다.
+
+model 생성
+
+boards.model.ts 로 직접 생성
+
+interface로 구조를 먼저 생성
+
+```ts
+export interface Board {
+    id: string;
+    title: string;
+    description: string;
+    status: BoardStatus;
+}
+```
+
+```ts
+export enum BoardStatus {
+    PUBLIC = 'PUBLIC',
+    PRIVATE = 'PRIVATE',
+}
+```
