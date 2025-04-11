@@ -56,3 +56,39 @@ export enum BoardStatus {
     PRIVATE = 'PRIVATE',
 }
 ```
+
+board 만들기
+
+createBoard() -> service
+
+게시물 id 값은 유니크해야함.
+
+nestjs에서 body 값 가져오기
+
+```ts
+createBoard(@Body() body) {
+
+}
+
+createBoard(@Body('title') title, @Body('description') description) {
+    
+}
+```
+이런 방법으로 가져올 수 있다.
+
+dto로 가져오기
+
+boards > dto 폴더를 생성해서 create-board.dto.ts 로 만든다. class는 런타임에서 파이프 기능을 사용하기 위해 interface가 아닌 class로 만든다.
+
+```ts
+export class CreateBoardDto {
+    title: string;
+    description: string;
+}
+```
+
+```ts
+createBoard(@Body() createBoardDto: CreateBoardDto) {
+    
+}
+```
