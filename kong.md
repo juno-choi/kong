@@ -22,7 +22,7 @@ nest g module [모듈 이름]
 
 contoller 생성
 ```
-nest g controller boards --no-spect
+nest g controller boards --no-spec
 ```
 테스트 코드는 일단 스킵
 
